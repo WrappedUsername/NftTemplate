@@ -1,2 +1,2 @@
-# Voxel-Helos-Genesis
-Smart contract for Voxel Helos NFT project on ethereum.
+# NFT Template
+Smart contract template for your NFT project on ethereum.
