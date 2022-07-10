@@ -36,7 +36,7 @@ contract YourProjectName is ERC721, Ownable {
     This is for ethereum only, this will not work for other blockchains e.g. like Polygon etc. 
     */
     uint256 public price = 0.05 ether; 
-    /// @notice Maximum supply is 4000, replace with your maximum supply for your project.
+    /// @dev Maximum supply is 4000, replace with your maximum supply for your project.
     uint256 public maxSupply = 4000;
 
     /// @dev Constructor assigns name and symbol. Replace with your NFT project name and symbol. 
@@ -45,8 +45,8 @@ contract YourProjectName is ERC721, Ownable {
     /**  
     @dev Please check that your json file extensions do not have .json at the end of the file name. 
     Also please ensure that the IPFS hash has the forward slash at the end of hash. 
-    e.g. ipfs://IpfshashGoesHereFollowedByTheForwardSlash/ this will return the tokenId at the end
-    so the metadata can be found e.g. ipfs://IpfshashGoesHereFollowedByTheForwardSlash/1 <- tokenId.
+    e.g. ipfs://IpfsHashGoesHereFollowedByTheForwardSlash/ this will return the tokenId at the end
+    so the metadata can be found e.g. ipfs://IpfsHashGoesHereFollowedByTheForwardSlash/1 <- tokenId.
     */
     function _baseURI() internal pure override returns (string memory) {
         return "/"; // Your art goes here.
