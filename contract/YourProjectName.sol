@@ -10,7 +10,7 @@ Pragma version 0.8.14 necessitates a version too recent to be trusted.
 Consider deploying with 0.6.12/0.7.6/0.8.7, solc-0.8.14 is not recommended for deployment
 Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#incorrect-versions-of-solidity
 */
-// Locked pragma and not too recent of version.
+// Locked pragma and not too recent of version. Feel free to remove above info.
 pragma solidity 0.8.7;
 
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";

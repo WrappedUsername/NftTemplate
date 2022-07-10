@@ -1,12 +1,12 @@
 const { ethers } = require("hardhat");
 
-// new javascript
+// Modern javascript, replace Your Project Name with your porject name!
 const main = async () => {
-  const VoxelHelos = await ethers.getContractFactory("VoxelHelos"); 
-  const voxelHelos = await VoxelHelos.deploy();
-  await voxelHelos.deployed();
+  const YourProjectName = await ethers.getContractFactory("YourProjectName"); 
+  const yourProjectName = await YourProjectName.deploy();
+  await yourProjectName.deployed();
 
-  console.log("Voxel Helos deployed to:", voxelHelos.address);
+  console.log("Your Project Name deployed to:", yourProjectName.address);
 };
 
 main()
