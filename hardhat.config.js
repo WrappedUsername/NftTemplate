@@ -5,16 +5,16 @@ require("dotenv").config();
 
 module.exports = {
   solidity: "0.8.7",
-    settings: {
-      optimizer: {
-        enabled: true,
-        runs: 200
-      }
-    },
+  settings: {
+    optimizer: {
+      enabled: true,
+      runs: 200
+    }
+  },
+  defaultNetwork: "hardhat",
   networks: {
-    networks: {
-      hardhat: {
-      },
+    hardhat: {
+    },
     ethereum: {
       url: "https://mainnet.infura.io/v3/${process.env.INFURA_API_KEY}",
       account: process.env.PRIVATE_KEY
@@ -22,6 +22,5 @@ module.exports = {
   },
   etherscan: {
     apiKey: process.env.ETHERSCAN_API_KEY
-    },
   },
 }
