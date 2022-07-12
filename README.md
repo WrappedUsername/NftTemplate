@@ -25,3 +25,12 @@ ETHERSCAN_API_KEY =
 PRIVATE_KEY =
 
 ```
+## Token id will start at 1.
+```Solidity
+
+ /// @dev Token id counter increments here to start the token count at 1 to match metadata.  
+    constructor() ERC721("Your Project Name", "YPN") {
+        _tokenIdCounter.increment();
+    }
+
+```
