@@ -39,8 +39,11 @@ contract YourProjectName is ERC721, Ownable {
     /// @dev Maximum supply is 4000, replace with your maximum supply for your project.
     uint256 public maxSupply = 4000;
 
-    /// @dev Constructor assigns name and symbol. Replace with your NFT project name and symbol. 
-    constructor() ERC721("Your Project Name", "YPN") {}
+    /** @dev Constructor assigns name and symbol. Replace with your NFT project name and symbol. 
+    Token id counter increments here to start the token count at 1 to match metadata. */ 
+    constructor() ERC721("Your Project Name", "YPN") {
+        _tokenIdCounter.increment();
+    }
 
     /**  
     @dev Please check that your json file extensions do not have .json at the end of the file name. 
@@ -55,6 +58,7 @@ contract YourProjectName is ERC721, Ownable {
     /// @notice Free mint for owner.
     function ownerMint(address to) public onlyOwner {
         uint256 tokenId = _tokenIdCounter.current();
+        require(_tokenIdCounter.current() <= maxSupply, "ALl NFT's have been minted");
         _tokenIdCounter.increment();
         _safeMint(to, tokenId);
     }
@@ -63,7 +67,7 @@ contract YourProjectName is ERC721, Ownable {
     function safeMint(address to) public payable {
         require(msg.value == price, "Please pay .05 ether");
         uint256 tokenId = _tokenIdCounter.current();
-        require(tokenId <= maxSupply, "ALl NFT's have been minted");
+        require(_tokenIdCounter.current() <= maxSupply, "ALl NFT's have been minted");
         _tokenIdCounter.increment();
         _safeMint(to, tokenId);
     }
