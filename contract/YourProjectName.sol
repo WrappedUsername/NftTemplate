@@ -65,7 +65,7 @@ contract YourProjectName is ERC721, Ownable {
 
     /// @notice Price to mint for "the public".
     function safeMint(address to) public payable {
-        require(msg.value == price, "Please pay .05 ether");
+        require(msg.value >= price, "Please pay .05 ether");
         uint256 tokenId = _tokenIdCounter.current();
         require(_tokenIdCounter.current() <= maxSupply, "ALl NFT's have been minted");
         _tokenIdCounter.increment();
